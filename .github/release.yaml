@@ -1,0 +1,20 @@
+changelog:
+  categories:
+    - title: "✨ Feature"
+      labels:
+        - "✨ Feature"
+    - title: "🐛 Bug"
+      labels:
+        - "🐛 Bug"
+    - title: ":recycle: Refactoring"
+      labels:
+        - ":recycle: Refactoring"
+    - title: ":gear: Environment"
+      labels:
+        - ":gear: Environment"
+    - title: ":robot: Dependencies"
+      labels:
+        - ":robot: Dependencies"
+    - title: "📝 Documentation"
+      labels:
+        - "📝 Documentation"
