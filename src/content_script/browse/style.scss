@@ -1,0 +1,65 @@
+.add-copy-button-to-jira-software {
+  position: relative;
+  width: 38px;
+  margin-left: 8px;
+}
+
+.add-copy-button-to-jira-software__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 32px;
+  padding: 0;
+  color: #42526e;
+  cursor: pointer;
+  background: rgba(9, 30, 66, 0.04);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+
+  &:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.add-copy-button-to-jira-software__svg {
+  width: 16px;
+  fill: #42526e;
+
+  [data-state="done"] & {
+    display: none;
+  }
+}
+
+.add-copy-button-to-jira-software__svgDone {
+  width: 15px;
+  fill: #1b5e20;
+
+  [data-state="default"] & {
+    display: none;
+  }
+}
+
+.add-copy-button-to-jira-software__tooltip {
+  position: absolute;
+  top: 42px;
+  left: -8px;
+  z-index: 100;
+  display: none;
+  padding: 2px 4px;
+  font-size: 0.625rem;
+  color: #ffffff;
+  white-space: nowrap;
+  background-color: #253858;
+  border-radius: 3px;
+
+  .add-copy-button-to-jira-software__button:hover + & {
+    display: block;
+  }
+}

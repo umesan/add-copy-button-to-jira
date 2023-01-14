@@ -1,0 +1,74 @@
+.add-copy-button-to-jira-software-boards {
+  position: relative;
+  padding: 0 10px;
+}
+
+.ghx-swimlane-header .add-copy-button-to-jira-software-boards {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ghx-row .add-copy-button-to-jira-software-boards {
+  display: flex;
+  align-items: center;
+}
+
+.add-copy-button-to-jira-software-boards__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.add-copy-button-to-jira-software-boards__svg {
+  width: 16px;
+  height: 20px;
+  fill: #cccccc;
+
+  [data-state="done"] & {
+    display: none;
+  }
+
+  .add-copy-button-to-jira-software-boards__button:hover & {
+    fill: #333333;
+  }
+}
+
+.add-copy-button-to-jira-software-boards__svgDone {
+  width: 16px;
+  height: 16px;
+  fill: #1b5e20;
+
+  [data-state="default"] & {
+    display: none;
+  }
+}
+
+.add-copy-button-to-jira-software-boards__tooltip {
+  position: absolute;
+  top: 2px;
+  left: 100%;
+  z-index: 100;
+  display: none;
+  padding: 2px 4px;
+  margin: 0;
+  font-size: 0.625rem;
+  color: #ffffff;
+  white-space: nowrap;
+  background-color: #253858;
+  border-radius: 3px;
+
+  .add-copy-button-to-jira-software-boards__button:hover + & {
+    display: block;
+  }
+}

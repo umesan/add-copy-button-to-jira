@@ -1,0 +1,83 @@
+{
+  "extDescription": {
+    "message": "Jira Softwareの「課題タイトル」「URL」「課題ID」等のコピーボタンを各画面に追加する拡張機能です。"
+  },
+  "header_button": {
+    "message": "画面を閉じる"
+  },
+  "heading": {
+    "message": "設定"
+  },
+  "summary_heading": {
+    "message": "概要"
+  },
+  "summary_lead": {
+    "message": "は、Jira Softwareの「課題タイトル」「URL」「課題ID」等のコピーボタンを下記の画面に追加する拡張機能です。"
+  },
+  "summary_item01": {
+    "message": "課題詳細画面"
+  },
+  "summary_item02": {
+    "message": "ボードの「アクティブスプリント」画面"
+  },
+  "summary_item03": {
+    "message": "ボードの「バックログ」画面"
+  },
+  "copyFormat_heading": {
+    "message": "コピー形式の選択"
+  },
+  "copyFormat_lead": {
+    "message": "Copy Button押下時のコピー形式を選択してください。"
+  },
+  "copyFormatPreview_title": {
+    "message": "プレビュー"
+  },
+  "copyFormatPreview_issueTitle": {
+    "message": "課題タイトル"
+  },
+  "copyFormatForm_heading01": {
+    "message": "課題タイトル + URL"
+  },
+  "copyFormatForm_heading02": {
+    "message": "課題ID + 課題タイトル + URL"
+  },
+  "copyFormatForm_heading03": {
+    "message": "課題タイトルのみ"
+  },
+  "copyFormatForm_heading04": {
+    "message": "課題ID + 課題タイトル"
+  },
+  "copyFormatForm_heading05": {
+    "message": "URLのみ"
+  },
+  "copyFormatForm_typeText": {
+    "message": "テキスト形式でコピーする"
+  },
+  "copyFormatForm_typeRichText": {
+    "message": "リッチテキスト形式でコピーする"
+  },
+  "copyFormatForm_typeMarkdown": {
+    "message": "markdown形式でコピーする"
+  },
+  "copyFormatForm_typeHtml": {
+    "message": "HTML形式でコピーする"
+  },
+  "settingShowButton_heading": {
+    "message": "Copy Button の表示"
+  },
+  "settingShowButton_lead": {
+    "message": "Copy Buttonを表示する画面を選択してください。"
+  },
+  "settingShowButtonForm_item01": {
+    "message": "課題詳細画面"
+  },
+  "settingShowButtonForm_item02": {
+    "message": "ボードの「アクティブスプリント」画面"
+  },
+  "settingShowButtonForm_item03": {
+    "message": "ボードの「バックログ」画面"
+  },
+  "contentScript_copyButtonTooltip": {
+    "message": "コピーする"
+  }
+}

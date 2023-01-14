@@ -1,0 +1,17 @@
+{
+  "plugins": ["@typescript-eslint", "import", "unused-imports"],
+  "extends": ["prettier"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc" }
+      }
+    ]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2015
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "extDescription": {
+    "message": "This is an extension that adds a copy button to each screen for \"Issue Title\", \"URL\", \"Issue ID\", etc. in Jira Software."
+  },
+  "header_button": {
+    "message": "Close"
+  },
+  "heading": {
+    "message": "Setting"
+  },
+  "summary_heading": {
+    "message": "Summary"
+  },
+  "summary_lead": {
+    "message": " is an extension that adds copy buttons for \"Issue Title\", \"URL\", \"Issue ID\", etc. in Jira Software to the following screen."
+  },
+  "summary_item01": {
+    "message": "Issue Details Screen"
+  },
+  "summary_item02": {
+    "message": "Board's \"Active Sprint\" screen"
+  },
+  "summary_item03": {
+    "message": "Board's \"Backlog\" screen"
+  },
+  "copyFormat_heading": {
+    "message": "Select copy format"
+  },
+  "copyFormat_lead": {
+    "message": "Select the copy format when the Copy Button is pressed."
+  },
+  "copyFormatPreview_title": {
+    "message": "Preview"
+  },
+  "copyFormatPreview_issueTitle": {
+    "message": "Issue Title"
+  },
+  "copyFormatForm_heading01": {
+    "message": "Issue Title + URL"
+  },
+  "copyFormatForm_heading02": {
+    "message": "Issue Id + Issue Title + URL"
+  },
+  "copyFormatForm_heading03": {
+    "message": "Only Issue Title"
+  },
+  "copyFormatForm_heading04": {
+    "message": "Issue Id + Issue Title"
+  },
+  "copyFormatForm_heading05": {
+    "message": "Only URL"
+  },
+  "copyFormatForm_typeText": {
+    "message": "Copy in text format"
+  },
+  "copyFormatForm_typeRichText": {
+    "message": "Copy in rich text format"
+  },
+  "copyFormatForm_typeMarkdown": {
+    "message": "Copy in markdown format"
+  },
+  "copyFormatForm_typeHtml": {
+    "message": "Copy in HTML format"
+  },
+  "settingShowButton_heading": {
+    "message": "Show Copy Button"
+  },
+  "settingShowButton_lead": {
+    "message": "Select the screen on which you want to display the Copy Button."
+  },
+  "settingShowButtonForm_item01": {
+    "message": "Issue Details Screen"
+  },
+  "settingShowButtonForm_item02": {
+    "message": "Board's \"Active Sprint\" screen"
+  },
+  "settingShowButtonForm_item03": {
+    "message": "Board's \"Backlog\" screen"
+  },
+  "contentScript_copyButtonTooltip": {
+    "message": "Copy"
+  }
+}

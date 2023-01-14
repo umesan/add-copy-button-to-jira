@@ -1,0 +1,65 @@
+.add-copy-button-to-jira-software-backlog {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+.add-copy-button-to-jira-software-backlog__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.add-copy-button-to-jira-software-backlog__svg {
+  width: 16px;
+  height: 20px;
+  fill: #cccccc;
+
+  [data-state="done"] & {
+    display: none;
+  }
+
+  .add-copy-button-to-jira-software-backlog__button:hover & {
+    fill: #333333;
+  }
+}
+
+.add-copy-button-to-jira-software-backlog__svgDone {
+  width: 16px;
+  height: 16px;
+  fill: #1b5e20;
+
+  [data-state="default"] & {
+    display: none;
+  }
+}
+
+.add-copy-button-to-jira-software-backlog__tooltip {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 100;
+  display: none;
+  padding: 2px 4px;
+  font-size: 0.625rem;
+  color: #ffffff;
+  white-space: nowrap;
+  background-color: #253858;
+  border-radius: 3px;
+
+  .add-copy-button-to-jira-software-backlog__button:hover + & {
+    display: block;
+  }
+}

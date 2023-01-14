@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Add Copy Button to Jira Software",
+  "description": "__MSG_extDescription__",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "default_locale": "ja",
+  "options_page": "pages/options.html",
+  "permissions": ["storage"],
+  "action": {},
+  "background": {
+    "service_worker": "src/service_worker/main.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/*"],
+      "js": ["src/content_script/main.ts"],
+      "run_at": "document_start"
+    }
+  ]
+}

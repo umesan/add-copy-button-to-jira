@@ -1,0 +1,104 @@
+###
+# GitHub へ push時に yarn lint, yarn type-checkを実行する workflow
+#
+# 参考構成
+# https://dev.classmethod.jp/articles/caching-dependencies-in-workflow-execution-on-github-actions/
+# https://github.com/ferraobox/todoist-jira/blob/c0b661a0ab895eef67b44d0c22526653feedf418/.github/workflows/ci.yml
+# https://github.com/brionmario/dev-server-ports/blob/d38013018f30bae2813f6395b74d9dca975452f4/.github/workflows/pr-yarner.yml
+#
+# actions/cacheの説明
+# https://www.kaizenprogrammer.com/entry/2019/12/15/220137#actionscache
+#
+###
+name: lint & type-check
+
+on: push
+
+env:
+  NODE_VERSION: 16.5.0
+
+jobs:
+  setup:
+    name: 🔰 Setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📍 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🔆 Cache Yarn Dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          # キャッシュとして保存＆復元するディレクトリのパス（指定できるディレクトリは一つ）
+          path: "**/node_modules"
+          # キャッシュを保存＆復元するためのkey
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          # キャッシュ復元時に key に完全に一致するキャッシュが存在しないときに使われるkeyのリスト
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: 👀 Show Yarn Cache
+        run: echo '${{ toJSON(steps.yarn-cache.outputs) }}'
+
+      - name: 🐱 Yarn Install
+        # キャッシュがなければ yarn installを実行
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        # yarn install時に
+        # --frozen-lockfile lockファイルを生成しない
+        # --silent logを表示しない
+        run: yarn install --frozen-lockfile --silent
+
+  lint:
+    needs:
+      - setup
+    name: Lint(stylelint, eslint, prettier)
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📍 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🔆 Cache Yarn Dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: 💅 yarn lint(stylelint, eslint, prettier)
+        run: yarn lint
+
+  type-check:
+    needs:
+      - setup
+    name: TypeCheck（tsc）
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📍 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🔆 Cache Yarn Dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: 👁 yarn type-check
+        run: yarn type-check
