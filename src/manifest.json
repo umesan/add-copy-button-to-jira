@@ -24,7 +24,7 @@
         "https://*.atlassian.net/browse/*"
       ],
       "js": ["src/content_script/main.ts"],
-      "run_at": "document_start"
+      "run_at": "document_end"
     }
   ]
 }
