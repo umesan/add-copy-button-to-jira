@@ -1,16 +1,23 @@
 import { addCopyButton } from "./addCopyButton";
 
-export const backlogMain = async () => {
-  const data = await chrome.storage.local.get("show");
-  if (!data.show.backlog) {
+export const backlogMain = () => {
+  const backlogHtmlElement = document.getElementById("ghx-content-group");
+  if (!backlogHtmlElement) {
     return;
   }
 
-  const backlogHtmlElement = document.getElementById("ghx-backlog");
-  if (
-    !backlogHtmlElement ||
-    backlogHtmlElement.getAttribute("data-state") === "completed"
-  ) {
+  const result = backlogHtmlElement.className;
+  const isDragInProgress = result.includes("ghx-drag-in-progress");
+  if (isDragInProgress) {
+    return;
+  }
+
+  const summaryElement =
+    backlogHtmlElement.getElementsByClassName("ghx-summary");
+  const buttonElement = backlogHtmlElement.getElementsByClassName(
+    "add-copy-button-to-jira-software-backlog"
+  );
+  if (summaryElement.length === buttonElement.length) {
     return;
   }
 
