@@ -3,10 +3,6 @@ import { CopyArgsType } from "../type";
 import { copy } from "../utils/copy";
 import { copyButtonElement } from "./copyButtonElement";
 
-export const addCopyButton = (rootHtmlElement: HTMLElement) => {
-  addCopyButtonToBacklogItem(rootHtmlElement);
-};
-
 const getTitleAndIssueKey = (item: Element): CopyArgsType => {
   const innerElement = item.querySelector(".ghx-summary .ghx-inner");
   const title = innerElement?.textContent ?? "";
@@ -34,14 +30,20 @@ const clickCopyButton = (event: Event, item: Element) => {
   }, 1000);
 };
 
-const addCopyButtonToBacklogItem = (rootHtmlElement: HTMLElement) => {
+export const addCopyButton = (rootHtmlElement: HTMLElement) => {
   const backlogCardNodeList =
     rootHtmlElement.querySelectorAll(".ghx-backlog-card");
   if (backlogCardNodeList.length === 0) {
     return;
   }
-  rootHtmlElement.setAttribute("data-state", "completed");
   backlogCardNodeList.forEach((backlogCardNodeItem) => {
+    const buttonElement = backlogCardNodeItem.querySelector(
+      ".add-copy-button-to-jira-software-backlog"
+    );
+    if (buttonElement) {
+      return;
+    }
+
     const summaryElement = backlogCardNodeItem.querySelector(".ghx-summary");
     summaryElement?.insertAdjacentHTML("afterend", copyButtonElement);
 

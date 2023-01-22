@@ -3,11 +3,6 @@ import { CopyArgsType } from "../type";
 import { copy } from "../utils/copy";
 import { copyButtonElement } from "./copyButtonElement";
 
-export const addCopyButton = (rootHtmlElement: HTMLElement) => {
-  addCopyButtonToCard(rootHtmlElement);
-  addCopyButtonToSwimlaneHeader(rootHtmlElement);
-};
-
 const getTitleAndIssueKey = (item: Element): CopyArgsType => {
   const summaryElement = item.querySelector(".ghx-summary");
   const title = summaryElement?.textContent ?? "";
@@ -35,15 +30,25 @@ const clickCopyButton = (event: Event, item: Element) => {
   }, 1000);
 };
 
-const addCopyButtonToCard = (rootHtmlElement: HTMLElement) => {
+export const addCopyButtonToSwimlaneColumns = (rootHtmlElement: Element) => {
   const issueNodeList = rootHtmlElement.querySelectorAll("div.ghx-issue");
   if (issueNodeList.length === 0) {
     return;
   }
-  rootHtmlElement.setAttribute("data-state", "completed");
+
   issueNodeList.forEach((issueNodeItem) => {
+    const buttonElement = issueNodeItem.querySelectorAll(
+      ".add-copy-button-to-jira-software-boards"
+    );
+    if (buttonElement.length > 0) {
+      return;
+    }
+
     const keyElement = issueNodeItem.querySelector("a.ghx-key");
-    keyElement?.insertAdjacentHTML("afterend", copyButtonElement);
+    if (!keyElement) {
+      return;
+    }
+    keyElement.insertAdjacentHTML("afterend", copyButtonElement);
 
     const copyButton = issueNodeItem.querySelector(
       `.${EXTENSION_ID}-boards__button`
@@ -86,13 +91,23 @@ const clickSwimlaneHeaderCopyButton = (event: Event, item: Element) => {
   }, 1000);
 };
 
-const addCopyButtonToSwimlaneHeader = (rootHtmlElement: HTMLElement) => {
+export const addCopyButtonToSwimlaneHeader = (rootHtmlElement: Element) => {
   const swimlaneHeaderNodeList = rootHtmlElement.querySelectorAll(
     ".ghx-swimlane-header"
   );
   swimlaneHeaderNodeList.forEach((swimlaneHeaderNodeItem) => {
+    const buttonElement = swimlaneHeaderNodeItem.querySelector(
+      ".add-copy-button-to-jira-software-boards"
+    );
+    if (buttonElement) {
+      return;
+    }
+
     const summaryElement = swimlaneHeaderNodeItem.querySelector(".ghx-summary");
-    summaryElement?.insertAdjacentHTML("afterend", copyButtonElement);
+    if (!summaryElement) {
+      return;
+    }
+    summaryElement.insertAdjacentHTML("afterend", copyButtonElement);
 
     const copyButton = swimlaneHeaderNodeItem.querySelector(
       `.${EXTENSION_ID}-boards__button`
