@@ -18,10 +18,10 @@
     "message": "Issue Details Screen"
   },
   "summary_item02": {
-    "message": "Board's \"Active Sprint\" screen"
+    "message": "Scrum Board ／ Kanban Board Screen"
   },
   "summary_item03": {
-    "message": "Board's \"Backlog\" screen"
+    "message": "Backlog Screen"
   },
   "copyFormat_heading": {
     "message": "Select copy format"
@@ -72,10 +72,10 @@
     "message": "Issue Details Screen"
   },
   "settingShowButtonForm_item02": {
-    "message": "Board's \"Active Sprint\" screen"
+    "message": "Scrum Board ／ Kanban Board Screen"
   },
   "settingShowButtonForm_item03": {
-    "message": "Board's \"Backlog\" screen"
+    "message": "Backlog Screen"
   },
   "contentScript_copyButtonTooltip": {
     "message": "Copy"
