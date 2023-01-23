@@ -18,10 +18,10 @@
     "message": "課題詳細画面"
   },
   "summary_item02": {
-    "message": "ボードの「アクティブスプリント」画面"
+    "message": "スクラム ボード／カンバン ボード 画面"
   },
   "summary_item03": {
-    "message": "ボードの「バックログ」画面"
+    "message": "バックログ画面"
   },
   "copyFormat_heading": {
     "message": "コピー形式の選択"
@@ -72,10 +72,10 @@
     "message": "課題詳細画面"
   },
   "settingShowButtonForm_item02": {
-    "message": "ボードの「アクティブスプリント」画面"
+    "message": "スクラム ボード／カンバン ボード 画面"
   },
   "settingShowButtonForm_item03": {
-    "message": "ボードの「バックログ」画面"
+    "message": "バックログ画面"
   },
   "contentScript_copyButtonTooltip": {
     "message": "コピーする"
