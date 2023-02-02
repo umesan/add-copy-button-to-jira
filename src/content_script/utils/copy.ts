@@ -106,11 +106,18 @@ ${getIssueURL(args.issueKey)}`;
 
 /**
  * 課題ID＋課題タイトル＋URL
+ * リッチテキスト形式でコピー
  */
 export const copyIdAndTitleAndUrlRichText = (args: CopyArgsType) => {
-  const text = `[${args.issueKey}]${args.title}
-${getIssueURL(args.issueKey)}`;
-  navigator.clipboard.writeText(text);
+  const text = `<a href="${getIssueURL(args.issueKey)}">[${args.issueKey}]${
+    args.title
+  }</a>`;
+  const blob = new Blob([text], { type: "text/html" });
+  const blobPlain = new Blob([text], { type: "text/plain" });
+  const item = [
+    new window.ClipboardItem({ "text/html": blob, "text/plain": blobPlain }),
+  ];
+  navigator.clipboard.write(item);
 };
 
 /**

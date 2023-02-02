@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Add Copy Button to Jira Software",
   "description": "__MSG_extDescription__",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icons": {
     "16": "icon16.png",
     "32": "icon32.png",
